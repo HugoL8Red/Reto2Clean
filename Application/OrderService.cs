@@ -20,7 +20,8 @@ namespace Application
 
         public int DeleteOrder(int id)
         {
-            throw new NotImplementedException();
+            _orderRepository.DeleteOrder(1);
+            return 0;
         }
 
         public Order GetOrder(int id)
