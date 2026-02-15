@@ -11,7 +11,8 @@ namespace Domain.Interfaces
     {
         public int CreateOrder(Order order);
         public Order GetOrder(int id);
-        public List<Order> GetOrderders(Order order);
+        public List<Order> GetOrders();
         public int DeleteOrder(int id);
+        public int UpdateOrder(Order order);
     }
 }

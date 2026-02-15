@@ -50,9 +50,9 @@ namespace Application
         /// <param name="order"></param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        public int GetOrderders(Order order)
+        public List<Order> GetOrders()
         {
-            throw new NotImplementedException();
+            return _orderRepository.GetOrders();
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Application
         /// <exception cref="NotImplementedException"></exception>
         public int UpdateOrder(Order order)
         {
-            throw new NotImplementedException();
+            return _orderRepository.UpdateOrder(order);
         }
     }
 }

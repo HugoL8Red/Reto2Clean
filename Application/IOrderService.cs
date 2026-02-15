@@ -12,7 +12,7 @@ namespace Application
         public int CreateOrder(Order order);
         public int UpdateOrder(Order order);
         public Order GetOrder(int id);
-        public int GetOrderders(Order order);
+        public List<Order> GetOrders();
         public int DeleteOrder(int id);
     }
 }
