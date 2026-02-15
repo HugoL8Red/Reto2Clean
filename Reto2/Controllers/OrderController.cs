@@ -33,6 +33,18 @@ namespace API.Controllers
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public List<Order> Get()
+        {
+            return _orderService.GetOrders();
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="order"></param>
         /// <returns></returns>
         [HttpPost]
