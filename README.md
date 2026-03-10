@@ -32,6 +32,9 @@ Se utilizo .net core para microsericios
 Se crearon los metodos de crear orden, obtener por id y obtener todas las ordenes
 No se incluyeron en la api los metodos de delete y update, tampoco se agregaron validaciones de ordenes duplicadas en este momento, se haran en la siguiente implementacion.
 
+trade-off
+Se utilizaron las siguientes fuentes de investigación como ejemplo y se utilizaron los patrones de repository e inyeccion de dependencias para el desarrollo de esta api sencilla. Tambien se uso una base de datos en momeria para poder probar el codigo sin un motor de base de datos
+
 Fuentes de investigación
 https://medium.com/@danceforrasputin/-411a365022f4
 https://medium.com/@martintrujillo/crear-una-api-en-net-core-con-clean-architecture-cqrs-y-dapper-desde-cero-011bdddb337c
