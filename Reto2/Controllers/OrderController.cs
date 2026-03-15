@@ -51,7 +51,7 @@ namespace API.Controllers
         public int CreateOrder(Order order)
         {
             var orderId = _orderService.CreateOrder(order);
-            return 0;
+            return orderId;
         }
     }
 }

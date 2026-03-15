@@ -1,23 +1,24 @@
 ﻿apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: reto2api # Un nombre para tu deployment
+  name: reto2-pagos-service # Un nombre para tu deployment
 spec:
   replicas: 3 # Número deseado de instancias (Pods)
   selector:
     matchLabels:
-      app: reto2api # Etiqueta para que el Service encuentre estos Pods
+      app: reto2-pagos-service # Etiqueta para que el Service encuentre estos Pods
   template:
     metadata:
       labels:
-        app: reto2api
+        app: reto2-pagos-service
     spec:
       containers:
-      - name: reto2api
-        image: reto2api:dev # Reemplaza con tu imagen de Docker Hub
+      - name: reto2-pagos-service
+        image: reto2-pagos-service:latest # Reemplaza con tu imagen de Docker Hub
+        imagePullPolicy: Never 
         resources:
           limits:
             memory: "256Mi"
             cpu: "500m"
         ports:
-        - containerPort: 80 # Puerto donde tu API C# escucha dentro del contenedor
+        - containerPort: 8080 # Puerto donde tu API C# escucha dentro del contenedor

@@ -31,7 +31,11 @@ namespace Application
                 Total = 10
             };
             
-            _pagoRepository.RealizarPago(pago);
+            var response = _pagoRepository.RealizarPago(pago).Result;
+            if (response == -1)
+            {
+                return -1;
+            }
 
             return 1;
         }

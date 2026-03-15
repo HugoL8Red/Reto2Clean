@@ -22,7 +22,7 @@ namespace Reto2.Infrastructure
             var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
 
             // Define the API endpoint URI
-            var uri = new Uri("https://localhost:7019/api/pago"); // A fake API for testing
+            var uri = new Uri("http://localhost:5001/api/pago"); // A fake API for testing
 
             try
             {
@@ -42,6 +42,7 @@ namespace Reto2.Infrastructure
             catch (HttpRequestException e)
             {
                 Console.WriteLine($"Request error: {e.Message}");
+                return -1;
             }
             return 1;
         }
