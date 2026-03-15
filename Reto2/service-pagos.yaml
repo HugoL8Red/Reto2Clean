@@ -1,7 +1,7 @@
 ﻿apiVersion: v1
 kind: Service
 metadata:
-  name: reto2-pagos-service # Un nombre para tu Service
+  name: reto2-pagos-service # Nombre del Service
 spec:
   type: NodePort # O LoadBalancer si estás en un entorno de nube
   selector:
