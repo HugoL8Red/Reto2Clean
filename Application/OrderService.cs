@@ -1,15 +1,19 @@
 ﻿using Domain.Entities;
-using Domain.Interfaces;
+using Infrastructure.Interfaces;
+using Reto2.Domain.Entities;
+using Reto2.Infrastructure.Interfaces;
 
 namespace Application
 {
     public class OrderService : IOrderService
     {
         private readonly IOrderRepository _orderRepository;
+        private readonly IPagoRepository _pagoRepository;
 
-        public OrderService(IOrderRepository orderRepository)
+        public OrderService(IOrderRepository orderRepository, IPagoRepository pagoRepository)
         {
             _orderRepository = orderRepository;
+            _pagoRepository = pagoRepository;
         }
 
         /// <summary>
@@ -20,6 +24,15 @@ namespace Application
         public int CreateOrder(Order order)
         {
             _orderRepository.CreateOrder(order);
+            Pago pago = new Pago()
+            {
+                OrderId = 1,
+                Name = order.Name,
+                Total = 10
+            };
+            
+            _pagoRepository.RealizarPago(pago);
+
             return 1;
         }
 

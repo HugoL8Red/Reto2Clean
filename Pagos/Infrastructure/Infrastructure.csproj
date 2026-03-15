@@ -7,13 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.13" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.13" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <None Remove="Interfaces\IPagoRepository.cs~RF72ef87d.TMP" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Domain\Reto2.Domain.csproj" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.13" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
 </Project>

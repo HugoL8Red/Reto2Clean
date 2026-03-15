@@ -2,10 +2,8 @@ using Application;
 using Infrastructure;
 using Infrastructure.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using Reto2.Infrastructure;
-using Reto2.Infrastructure.Interfaces;
 
-namespace Reto2
+namespace PagosApi
 {
     public class Program
     {
@@ -16,10 +14,9 @@ namespace Reto2
             // Add services to the container.
 
             builder.Services.AddControllers();
-            builder.Services.AddScoped<IOrderService, OrderService>();
-            builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+            builder.Services.AddScoped<IPagoService, PagoService>();
             builder.Services.AddScoped<IPagoRepository, PagoRepository>();
-            builder.Services.AddDbContext<AppDbContext>(options => options.UseInMemoryDatabase("TestDbPago"));
+            builder.Services.AddDbContext<AppDbContext>(options => options.UseInMemoryDatabase("TestDb"));
 
             var app = builder.Build();
 
