@@ -38,3 +38,15 @@ Se utilizaron las siguientes fuentes de investigación como ejemplo y se utiliza
 Fuentes de investigación
 https://medium.com/@danceforrasputin/-411a365022f4
 https://medium.com/@martintrujillo/crear-una-api-en-net-core-con-clean-architecture-cqrs-y-dapper-desde-cero-011bdddb337c
+
+# Reto 3
+Se creo otro servicio llamado pagos para relaizar la comuniocacion entre 2 contenedores.
+Se crearón dos docker files, uno por cada servicio (ordenes y pagos).
+Por cada servicio se creo un archivo de development y service
+El archivo docker-compose tiene las dos implementaciones de las imagenes de los dos servicios.
+Se crearon 3 pods por cada imagen.
+
+Se agrego un nuevo repositorio en la api de ordenes (PagoRepository) para realizar la llamada a la api de pagos
+Se llama a la clase HttpClient para poder realizar el llamado, el metodo creado en el nuevo repositorio se creo de forma asincrona para poder realizar la llamada
+
+
