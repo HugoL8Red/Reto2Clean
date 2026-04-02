@@ -32,6 +32,10 @@ namespace Application
             };
             
             var response = _pagoRepository.RealizarPago(pago).Result;
+
+            //send message
+            var messageSent = _orderRepository.CreateOrderMessage(order);
+
             if (response == -1)
             {
                 return -1;
