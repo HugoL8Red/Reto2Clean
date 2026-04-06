@@ -31,15 +31,15 @@ namespace Application
                 Total = 10
             };
             
-            var response = _pagoRepository.RealizarPago(pago).Result;
+            // var response = _pagoRepository.RealizarPago(pago).Result;
 
             //send message
             var messageSent = _orderRepository.CreateOrderMessage(order);
 
-            if (response == -1)
-            {
-                return -1;
-            }
+            //if (response == -1)
+            //{
+            //    return -1;
+            //}
 
             return 1;
         }
