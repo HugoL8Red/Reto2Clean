@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Domain.Entities;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace Reto2.Application
+namespace Application
 {
     public interface IOrderMessage
     {
+         public Task SendMessageAsync(Order message, string queueName);
     }
 }

@@ -2,6 +2,7 @@
 using Infrastructure.Interfaces;
 using Reto2.Domain.Entities;
 using Reto2.Infrastructure.Interfaces;
+using System.Text.Json;
 
 namespace Application
 {
@@ -9,11 +10,13 @@ namespace Application
     {
         private readonly IOrderRepository _orderRepository;
         private readonly IPagoRepository _pagoRepository;
+        private readonly IOrderMessage _orderMessage;
 
-        public OrderService(IOrderRepository orderRepository, IPagoRepository pagoRepository)
+        public OrderService(IOrderRepository orderRepository, IPagoRepository pagoRepository, IOrderMessage orderMessage)
         {
             _orderRepository = orderRepository;
             _pagoRepository = pagoRepository;
+            _orderMessage = orderMessage;
         }
 
         /// <summary>
@@ -24,6 +27,8 @@ namespace Application
         public int CreateOrder(Order order)
         {
             _orderRepository.CreateOrder(order);
+
+            //save order
             Pago pago = new Pago()
             {
                 OrderId = 1,
@@ -34,7 +39,8 @@ namespace Application
             // var response = _pagoRepository.RealizarPago(pago).Result;
 
             //send message
-            var messageSent = _orderRepository.CreateOrderMessage(order);
+
+            _orderMessage.SendMessageAsync(order, "Order created");
 
             //if (response == -1)
             //{

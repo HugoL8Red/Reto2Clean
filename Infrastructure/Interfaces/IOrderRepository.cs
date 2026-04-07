@@ -14,6 +14,5 @@ namespace Infrastructure.Interfaces
         public List<Order> GetOrders();
         public int DeleteOrder(int id);
         public int UpdateOrder(Order order);
-        public bool CreateOrderMessage(Order order);
     }
 }

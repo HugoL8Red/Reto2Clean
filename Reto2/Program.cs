@@ -19,6 +19,7 @@ namespace Reto2
             builder.Services.AddScoped<IOrderService, OrderService>();
             builder.Services.AddScoped<IOrderRepository, OrderRepository>();
             builder.Services.AddScoped<IPagoRepository, PagoRepository>();
+            builder.Services.AddScoped<IOrderMessage, OrderMessage>();
             builder.Services.AddDbContext<AppDbContext>(options => options.UseInMemoryDatabase("TestDbPago"));
 
             var app = builder.Build();

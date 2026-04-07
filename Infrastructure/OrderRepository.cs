@@ -72,15 +72,5 @@ namespace Infrastructure
             return 1;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="order"></param>
-        /// <returns></returns>
-        public bool CreateOrderMessage(Order order)
-        {
-
-            return true;
-        }
     }
 }
