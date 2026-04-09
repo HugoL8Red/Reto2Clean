@@ -1,20 +1,20 @@
 ﻿apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: reto2-orders-service # Un nombre para tu deployment
+  name: reto2-worker-service # Un nombre para tu deployment
 spec:
   replicas: 3 # Número deseado de instancias (Pods)
   selector:
     matchLabels:
-      app: reto2-orders-service # Etiqueta para que el Service encuentre estos Pods
+      app: reto2-worker-service # Etiqueta para que el Service encuentre estos Pods
   template:
     metadata:
       labels:
-        app: reto2-orders-service
+        app: reto2-worker-service
     spec:
       containers:
-      - name: reto2-orders-service
-        image: reto2-orders-service:latest # Reemplaza con tu imagen de Docker Hub
+      - name: reto2-worker-service
+        image: reto2-worker-service:latest # Reemplaza con tu imagen de Docker Hub
         imagePullPolicy: Never 
         resources:
           limits:

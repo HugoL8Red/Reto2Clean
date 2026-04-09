@@ -1,0 +1,56 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reto2-gateway-service
+  labels:
+    app: reto2-gateway-service
+spec:
+  replicas: 2 # Scale based on traffic
+  selector:
+    matchLabels:
+      app: reto2-gateway-service
+  template:
+    metadata:
+      labels:
+        app: reto2-gateway-service
+    spec:
+      containers:
+      - name: reto2-gateway-service
+        image: reto2-gateway-service:latest # Update with your image
+        # ports:
+        # - containerPort: 80 # Default HTTP port
+        # env:
+        # - name: ASPNETCORE_ENVIRONMENT
+        #   value: "Production"
+        resources:
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+          requests:
+            cpu: "200m"
+            memory: "256Mi"
+
+
+
+# metadata:
+#   name: reto2-worker-service # Un nombre para tu deployment
+# spec:
+#   replicas: 3 # Número deseado de instancias (Pods)
+#   selector:
+#     matchLabels:
+#       app: reto2-worker-service # Etiqueta para que el Service encuentre estos Pods
+#   template:
+#     metadata:
+#       labels:
+#         app: reto2-worker-service
+#     spec:
+#       containers:
+#       - name: reto2-worker-service
+#         image: reto2-worker-service:latest # Reemplaza con tu imagen de Docker Hub
+#         imagePullPolicy: Never 
+#         resources:
+#           limits:
+#             memory: "256Mi"
+#             cpu: "500m"
+#         ports:
+#         - containerPort: 8080 # Puerto donde tu API C# escucha dentro del contenedor

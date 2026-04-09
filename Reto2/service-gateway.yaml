@@ -3,9 +3,9 @@ kind: Service
 metadata:
   name: reto2-worker-service # Nombre del Service
 spec:
-  type: NodePort # O LoadBalancer si estás en un entorno de nube
+  type: LoadBalancer  # O LoadBalancer si estás en un entorno de nube
   selector:
-    app: reto2-worker-service # Debe coincidir con las etiquetas en tu Deployment
+    app: reto2-gateway-service # Debe coincidir con las etiquetas en tu Deployment
   ports:
   - protocol: TCP
     port: 80 # Puerto accesible desde fuera del clúster (para el Service IP)
