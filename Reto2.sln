@@ -29,9 +29,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{5566C1EC
 	ProjectSection(SolutionItems) = preProject
 		Reto2\deployment-order.yaml = Reto2\deployment-order.yaml
 		Reto2\deployment-pagos.yaml = Reto2\deployment-pagos.yaml
+		Reto2\deployment-worker.yaml = Reto2\deployment-worker.yaml
 		docker-compose.yml = docker-compose.yml
 		Reto2\service-order.yaml = Reto2\service-order.yaml
 		Reto2\service-pagos.yaml = Reto2\service-pagos.yaml
+		Reto2\service-worker.yaml = Reto2\service-worker.yaml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Worker", "Worker", "{153C9538-006A-4D4E-BF67-CA6D6BC7E305}"

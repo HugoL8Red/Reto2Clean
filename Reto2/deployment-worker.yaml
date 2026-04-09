@@ -1,0 +1,24 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reto2-orders-service # Un nombre para tu deployment
+spec:
+  replicas: 3 # Número deseado de instancias (Pods)
+  selector:
+    matchLabels:
+      app: reto2-orders-service # Etiqueta para que el Service encuentre estos Pods
+  template:
+    metadata:
+      labels:
+        app: reto2-orders-service
+    spec:
+      containers:
+      - name: reto2-orders-service
+        image: reto2-orders-service:latest # Reemplaza con tu imagen de Docker Hub
+        imagePullPolicy: Never 
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080 # Puerto donde tu API C# escucha dentro del contenedor

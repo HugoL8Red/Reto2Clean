@@ -1,0 +1,12 @@
+﻿apiVersion: v1
+kind: Service
+metadata:
+  name: reto2-orders-service # Nombre del Service
+spec:
+  type: NodePort # O LoadBalancer si estás en un entorno de nube
+  selector:
+    app: reto2-orders-service # Debe coincidir con las etiquetas en tu Deployment
+  ports:
+  - protocol: TCP
+    port: 80 # Puerto accesible desde fuera del clúster (para el Service IP)
+    targetPort: 80 # Puerto al que se redirige el tráfico dentro del Pod (containerPort)
