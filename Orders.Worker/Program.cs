@@ -1,3 +1,5 @@
+using Worker.Application;
+
 namespace Orders.Worker
 {
     public class Program
@@ -9,6 +11,7 @@ namespace Orders.Worker
             // Add services to the container.
 
             builder.Services.AddControllers();
+            builder.Services.AddScoped<IWorkerService, WorkerService>();
 
             var app = builder.Build();
 

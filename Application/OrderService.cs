@@ -40,7 +40,7 @@ namespace Application
 
             //send message
 
-            _orderMessage.SendMessageAsync(order, "Order created");
+            _orderMessage.SendMessageAsync(order, "OrderCreated");
 
             //if (response == -1)
             //{
