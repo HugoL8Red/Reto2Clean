@@ -14,7 +14,14 @@ namespace Worker.Application
 
         public WorkerService()
         {
-            _factory = new ConnectionFactory { HostName = "localhost" };
+            _factory = new ConnectionFactory()
+            {
+                HostName = "localhost", // Use IP or domain for remote brokers
+                Port = 5672,            // Use 5671 for SSL
+                UserName = "guest",
+                Password = "guest",
+                VirtualHost = "/"
+            };
         }
 
         public async Task<string> GetMessage(string message)

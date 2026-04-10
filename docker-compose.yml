@@ -27,6 +27,15 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
 
+  gateway-service:
+    build:
+      context: .              # Context should be the root of the solution
+      dockerfile: ApiGateway/Dockerfile
+    ports:
+      - "5003:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+
   rabbitmq:
     container_name: demo-rabbit    
     image: rabbitmq:3-management
