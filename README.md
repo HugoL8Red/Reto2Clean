@@ -65,5 +65,6 @@ Se creo una imagen de Rabbitmq en docker para poder tener acceso a rabbitq de ma
 Se agregaron los servicios de api gateway, worker y rabbitMq en el archivo de docker-compose.
 
 Para poder acceder a rabbitmq de manera local se utiliza la siguiente url http://localhost:15672/ con el usuario y password guest.
+La url para acceder a las apis por medio del gateway es https://localhost:7056
 
 
