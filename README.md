@@ -54,3 +54,14 @@ Se utilizan la creación de imagenes y contenedores para tener copias disponible
 Los pods sirven para atender mas peticiones al mismo tiempo y no hacer esperar a los cliente que invocan los end points
 
 El archivo dockerfile se utiliza para crear una imagen del codigo compilado, compilando el codigo, copiando los archivos de los diferentes proyectos, restaurando el proyecto principal y generando la dll del proyecto. 
+
+# Reto4
+Se crearon dos nuevos servicios, apigateway y worker service
+Gateway es la puerta de enlace para conectarse alos servicios de ordener y worker. Se utilizo la libreria de Yarp revers proxy para poder lograr el gateway
+Se agrego una funcionalidad al servicio de ordenes, mandar una peticion a RabbitMq para crear un mensaje, se utilizo la libreria de RabbitMq para .net.
+El servicio worker obtiene los mensaje que se crearon en Rabbitmq y los lee.
+
+Se creo una imagen de Rabbitmq en docker para poder tener acceso a rabbitq de manera local y poder probar el funcionamiento de la aplicación
+Se agregaron los servicios de api gateway, worker y rabbitMq en el archivo de docker-compose
+
+
